@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            const op = document.getElementById("op")
+            op.onclick = function(){
+                const a = document.getElementById("a")
+                const b = document.getElementById("b")
+                const ans = document.getElementById("ans")
+                let ansV = a.innerText  + b.innerText
+                ans.innerText = ansV
+            }
+        }
+    </script>
+</head>
+<body>
+    <span id="a">8</span>+<span id="b">9</span><span id="op">=</span><span id="ans">？</span>
+</body>
+</html>
