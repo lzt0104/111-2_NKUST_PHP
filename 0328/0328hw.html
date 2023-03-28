@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("sure").onclick = function () {
+                console.log("twst")
+                const ch = document.getElementById("chinese").value
+                const math = document.getElementById("math").value
+                const eng = document.getElementById("eng").value
+                const ans = document.getElementById("ans").innerText
+                const ansc = document.getElementById("ans")
+                console.log(ch)
+                console.log(math)
+                console.log(eng)
+                let Vavg
+                Vavg = parseFloat((parseInt(ch) + parseInt(math) + parseInt(eng))/3)
+                document.getElementById("ans").innerText = Vavg
+                if (Vavg >60) {
+                    ansc.style.color = "blue"
+                }
+                else {
+                    ansc.style.color = "red"
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <span>國文：</span><input type="text" id="chinese">
+    <span>英文：</span><input type="text" id="eng">
+    <span>數學：</span><input type="text" id="math">
+    <span>平均分數：</span><span id="ans"></span>
+    <button id="sure">計算</button>
+</body>
+
+</html>
