@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementById("cal").onclick = function(){
+                const a = document.getElementById("a").value
+                const b = document.getElementById("b").value
+                const op = document.getElementById("op")
+                const opans = document.getElementById("opans").value
+                let opAns
+                if (op.value == "+"){
+                    opAns = parseInt(a)+parseInt(b)
+                }else if (op.value == "-"){
+                    opAns = parseInt(a)-parseInt(b)
+                }else if (op.value == "*"){
+                    opAns = parseInt(a)*parseInt(b)
+                }else if (op.value == "/"){
+                    opAns = parseInt(a)/parseInt(b)
+                }
+                document.getElementById("opans").value = opAns
+            }
+            document.getElementById("avgec").onclick = function(){
+                const chinese = document.getElementById("chinese").value
+                const eng = document.getElementById("eng").value
+                const math = document.getElementById("math").value
+                const avge = document.getElementById("avge")
+                let sum
+                let average
+                sum = parseInt(chinese)+parseInt(eng)+parseInt(math)
+                average = sum/3
+                document.getElementById("avge").innerText = average
+                if (average>=60){
+                    avge.style.color = "blue"
+                }else{
+                    avge.style.color = "red"
+                }
+            }
+            document.getElementById("ab").onclick = function(){
+                console.log("ans")
+                const a1 = parseInt(document.getElementById("a1").value) 
+                const b1 = parseInt(document.getElementById("b1").value)
+                const tans = document.getElementById("tans")
+                let tanss = 0
+                for(i=a1;i<=b1;i++){
+                    tanss = tanss+i
+                }
+                tans.value = tanss
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>加減乘除計算機</h1>
+    <input type="text" id="a">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="b">
+    <span>=</span><input type="text" id="opans">
+    <button id="cal">計算</button>
+    <h1>學生成績計算</h1>
+    <span>國文：<input type="text" id="chinese"></span>
+    <span>英文：<input type="text" id ="eng"></span>
+    <span>數學：<input type="text" id="math"></span>
+    <span>平均分數：<span id="avge">？</span></span>
+    <button id="avgec">計算平均</button>
+    <h1>計算a+......+b的值</h1>
+    <p>請輸入a的值：<input type="text" id="a1"></p>
+    <p>請輸入b的值：<input type="text" id="b1"></p>
+    <p>答案是：<input type="text" id="tans"></p>
+    <button id="ab">計算</button>
+</body>
+</html>
