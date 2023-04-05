@@ -21,6 +21,8 @@
                     opAns = parseInt(a)*parseInt(b)
                 }else if (op.value == "/"){
                     opAns = parseInt(a)/parseInt(b)
+                }else{
+                    window.alert("無效的計算符號")
                 }
                 document.getElementById("opans").value = opAns
             }
@@ -58,6 +60,7 @@
     <h1>加減乘除計算機</h1>
     <input type="text" id="a">
     <select id="op">
+        <option value=""></option>
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
