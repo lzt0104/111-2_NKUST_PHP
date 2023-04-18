@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementById("cal").onclick = function(){
+                console.log("OK")
+                const chi = document.getElementsByName("chi")
+                const eng = document.getElementsByName("eng")
+                const math = document.getElementsByName("math")
+                const tec = document.getElementsByName("tec")
+                const sum = document.getElementsByName("sum")
+                const avg = document.getElementsByName("avg")
+                let chiValue = new Array()
+                let engValue = new Array()
+                let mathValue = new Array()
+                let tecValue = new Array()
+                let sumValue = new Array()
+                let avgValue = new Array()
+                for (let i = 0; i < chi.length; i++) {
+                    chiValue[i] = parseInt(chi[i].value)
+                    engValue[i] = parseInt(eng[i].value)
+                    mathValue[i] = parseInt(math[i].value)
+                    tecValue[i] = parseInt(tec[i].value)
+                }
+                console.log(chiValue)
+                for (let i = 0; i < chiValue.length; i++) {
+                    sumValue[i] = chiValue[i]+engValue[i]+mathValue[i]+tecValue[i]
+                    avgValue[i] = sumValue[i]/4
+                }
+                console.log(sumValue)
+                console.log(avgValue)
+                for (let i = 0; i < sumValue.length; i++) {
+                    sum[i].innerText = sumValue[i]
+                }
+                for (let i = 0; i < avgValue.length; i++) {
+                    avg[i].innerText = avgValue[i]     
+                }
+                let chis = 0
+                let engs =0
+                let maths =0
+                let tecs =0
+                let sums =0
+                let avgs =0
+                for (let i = 0; i < chiValue.length; i++) {
+                    chis+=chiValue[i];
+                    engs += engValue[i]
+                    maths += mathValue[i]
+                    tecs += tecValue[i]
+                    sums += sumValue[i]
+                    avgs += avgValue[i]
+                }
+                console.log(chis)
+                document.getElementById("avgchi").innerText = chis/chiValue.length
+                document.getElementById("avgeng").innerText = engs/engValue.length
+                document.getElementById("avgmath").innerText = maths/mathValue.length
+                document.getElementById("avgtec").innerText = tecs/tecValue.length
+                document.getElementById("sum").innerText = sums/sumValue.length
+                document.getElementById("avg").innerText = avgs/avgValue.length
+            }
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr><td>編號</td><td>國文</td><td>英文</td><td>數學</td><td>計概</td><td>總分</td><td>平均</td></tr>
+        <tr><td>1</td><td><input type="text" name="chi" value="80"></td><td><input type="text" name="eng" value="90"></td><td><input type="text" name="math" value="50"></td><td><input type="text" name="tec" value="90"></td><td name="sum"></td><td name="avg"></td></tr>
+        <tr><td>2</td><td><input type="text" name="chi" value="80"></td><td><input type="text" name="eng" value="90"></td><td><input type="text" name="math" value="50"></td><td><input type="text" name="tec" value="90"></td><td name="sum"></td><td name="avg"></td></tr>
+        <tr><td>3</td><td><input type="text" name="chi" value="80"></td><td><input type="text" name="eng" value="90"></td><td><input type="text" name="math" value="50"></td><td><input type="text" name="tec" value="90"></td><td name="sum"></td><td name="avg"></td></tr>
+        <tr><td>4</td><td><input type="text" name="chi" value="80"></td><td><input type="text" name="eng" value="90"></td><td><input type="text" name="math" value="50"></td><td><input type="text" name="tec" value="90"></td><td name="sum"></td><td name="avg"></td></tr>
+        <tr><td>5</td><td><input type="text" name="chi" value="80"></td><td><input type="text" name="eng" value="90"></td><td><input type="text" name="math" value="50"></td><td><input type="text" name="tec" value="90"></td><td name="sum"></td><td name="avg"></td></tr>
+        <tr><td>平均</td><td id="avgchi"></td><td id="avgeng"></td><td id="avgmath"></td><td id="avgtec"></td><td id="sum"></td><td id="avg"></td></tr>
+    </table>
+    <button id="cal">計算</button>
+</body>
+</html>
