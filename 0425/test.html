@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getBMI(w,h) {
+            const bmi = w/(h*h)
+            return bmi
+        }
+        window.onload = function(){
+            document.getElementById("cal").onclick = function(){
+                const w = document.getElementById("weight").value
+                const h = document.getElementById("height").value
+                bmi = getBMI(w,h)
+                console.log(bmi)
+                document.getElementById("bmi").innerText = bmi
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>身高(m)：<input type="text" id="height" value="1.7"></p>
+    <p>體重(kg)：<input type="text" id="weight" value="60"></p>
+    <span>BMI：<span id="bmi"></span></span>
+    <button id="cal">計算</button>
+</body>
+</html>
