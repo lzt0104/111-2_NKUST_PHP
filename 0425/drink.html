@@ -39,14 +39,24 @@
                 console.log(smaillsum)
                 console.log(memberValue)
                 let msg = ""
+                let mathValuesum = 0
                 if (memberValue == "y"){
-                    msg += "親愛的顧客您好，您的餐點為"
+                    msg += "親愛的顧客您好，您的餐點為<br>"
                     for (let i = 0; i < itemValue.length; i++) {
-                        msg += itemValue[i] + "：" + moneyValue[i] + "*" + mathValue[i] + "=" + moneyValue[i]*mathValue[i]<br>
-                        document.getElementById("cool").innerHTML = "<p>親愛的顧客您好，您的餐點是</p>"
+                        msg += itemValue[i] + ":" + moneyValue[i] + "*" + mathValue[i] + "=" + moneyValue[i]*mathValue[i]+"<br>"
+                        mathValuesum += mathValue[i]
                     }
-                    msg += "會員八折：" +smaillsum+"*0.8"+"=" + smaillsum*0.8 + "元"
+                    msg += "會員八折：" +smaillsum+"*0.8"+"=" + smaillsum*0.8 + "元<br>" 
+                    msg += "總共"+mathValuesum+"份，共計"+smaillsum*0.8+"元"
+                    document.getElementById("cool").innerHTML = msg
                 } else{
+                    msg += "親愛的顧客您好，您的餐點為<br>"
+                    for (let i = 0; i < itemValue.length; i++) {
+                        msg += itemValue[i] + ":" + moneyValue[i] + "*" + mathValue[i] + "=" + moneyValue[i]*mathValue[i]+"<br>"
+                        mathValuesum += mathValue[i]
+                    }
+                    msg += "總共"+mathValuesum+"份，共計"+smaillsum+"元"
+                    document.getElementById("cool").innerHTML = msg
                 }
                 
             }
