@@ -23,7 +23,15 @@ function a() {
             msg += "親愛的顧客，您的支付清單如下:<br>【TOSHIBA 東芝】58型:12999*" + m + t + "<br>" + "使用現金付款<br>" + "商品總價:" + t + "<br>福利點數:" + dot + "+" + t + "*0.05=" + dtt
             document.getElementById("root3").innerHTML = msg
         }else if (memberValue == "icash"){
-
+            tt = t *0.9
+            dt = t*0.1
+            msg += "親愛的顧客，您的支付清單如下:<br>【TOSHIBA 東芝】58型:12999*" + m + t + "<br>" + "使用儲值金支付<br>" + "商品總價:" + t + "<br>福利點數:" + dot + "+" + t + "*0.1=" + dtt
+            document.getElementById("root3").innerHTML = msg
+        }else{
+            dt = dot-t
+            tt = t
+            msg += "親愛的顧客，您的支付清單如下:<br>【TOSHIBA 東芝】58型:12999*" + m + t + "<br>" + "使用福利點數支付<br>" + "商品總價:" + t + "<br>福利點數:" + dot + "-" + t + "*0.1=" + dt
+            document.getElementById("root3").innerHTML = msg
         }
     }
 
