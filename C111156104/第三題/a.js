@@ -20,10 +20,10 @@ function a() {
         if (memberValue == "cash") {
             tt = t
             dt = t * 0.05
-            msg = "親愛的顧客，您的支付清單如下:<br>【TOSHIBA 東芝】58型:12999*" + m + t + "<br>" + "使用現金付款<br>" + "商品總價:" + t + "<br>福利點數:" + dot + "+" + t + "*0.05=" + dtt
+            msg += "親愛的顧客，您的支付清單如下:<br>【TOSHIBA 東芝】58型:12999*" + m + t + "<br>" + "使用現金付款<br>" + "商品總價:" + t + "<br>福利點數:" + dot + "+" + t + "*0.05=" + dtt
             document.getElementById("root3").innerHTML = msg
         }else if (memberValue == "icash"){
-            
+
         }
     }
 
