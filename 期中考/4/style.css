@@ -1,0 +1,35 @@
+input[type=number] {
+  width: 40px;
+}
+
+table {
+  text-align: center;
+}
+
+table, tr, td {
+  border: 1px solid gray;
+}
+
+.header2 > td {
+  width: 40px;
+}
+
+.header, .header2 {
+  background-color: aqua;
+}
+
+.Number {
+  background-color: lightsalmon;
+}
+
+.totalNumber {
+  background-color: lightgreen;
+}
+
+.Turnover {
+  background-color: lightblue;
+}
+
+.Aurplus {
+  background-color: lightpink;
+}
