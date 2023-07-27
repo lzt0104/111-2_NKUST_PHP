@@ -1,0 +1,35 @@
+table, tr, td {
+  border: 1px solid gray;
+}
+
+.header > span {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 0px 5px;
+  width: 50px;
+}
+
+.header > .productName {
+  width: 200px;
+}
+
+.header2 > span {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 0px 5px;
+  width: 50px;
+}
+
+.header2 > .productName {
+  display: inline-block;
+  width: 200px;
+}
+
+.payMethod {
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  width: 70px;
+  margin-bottom: 10px;
+}
